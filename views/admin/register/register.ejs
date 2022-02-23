@@ -1,0 +1,56 @@
+<%- include('../partials/header') %>
+        <!-- Container Fluid-->
+        <div class="container-fluid" id="container-wrapper">
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Registration Information</h1>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-12">
+              <!-- Registration Information -->
+              <div class="card mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Registration Information</h6>
+                </div>
+                <div class="card-body">
+                  <form action="/admin/register/<%- registration._id %>?_method=PUT" method="POST">
+                    <div class="form-group">
+                      <label for="exampleStudenID">Student ID</label>
+                      <input type="number" class="form-control" id="exampleStudentID" aria-describedby="studentIDHelp" value="<%- registration.studentID %>" name="studentID" readonly>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputName1">Student Name</label>
+                      <input type="text" class="form-control" id="exampleInputName1" aria-describedby="nameHelp" value="<%- registration.studentName %>" name="studentName" readonly>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleEmail">Student Email</label>
+                      <input type="email" class="form-control" id="exampleEmail" aria-describedby="emailHelp" value="<%- registration.email %>" name="email" readonly>
+                    </div>
+
+                    <label for="exampleCurrentYear">Registration Status</label>
+                    <select class="form-control form-control-md  mb-3" name="status" id="exampleCurrentYear">
+                      <option disabled selected>Registration Status</option>
+                      <option value="Registered">Register</option>
+                      <option value="Pending">Not Registered</option>
+                    </select>
+
+                    <div class="form-group">
+                      <label for="exampleEmail">Fee Paid (Le)</label>
+                      <input type="number" class="form-control" id="exampleEmail" aria-describedby="emailHelp" value="<%- registration.feePaid %>" name="feePaid">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleEmail">Fee Receipt</label>
+                      <a href="/admin/files/<%- registration.feeReceipt %>" target="_blank" download>Download Fee Receipt</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Row-->
+<%- include ('../partials/footer') %>

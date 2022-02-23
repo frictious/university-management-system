@@ -1,0 +1,130 @@
+<%- include("partials/student_header"); %>
+
+    <!-- Breadcrumb Area Start -->
+    <div class="breadcrumb-area contact-breadcrumb bg-img bg-overlay jarallax" style="background-image: url(/images/njala_logo.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb-content text-center mt-100">
+                        <h2 class="page-title">Register</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Register</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb Area End -->
+
+    <!-- Register Form Area Start -->
+    <div class="roberto-contact-form-area section-padding-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Section Heading -->
+                    <div class="section-heading text-center wow fadeInUp" data-wow-delay="100ms">
+                        <h6>Register</h6>
+                        <h2>Be Registered</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <!-- Form -->
+                    <div class="roberto-contact-form">
+                        <form action="/register" method="POST" enctype="multipart/form-data">
+                            <div class="section-heading text-center wow fadeInUp" data-wow-delay="100ms">
+                                <h6>Personal Information</h6>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-lg-6 wow fadeInUp" data-wow-delay="100ms">
+                                    <label for="">Name</label>
+                                    <input type="text" name="studentName" class="form-control mb-30" value="<%- student.name %>" readonly>
+                                </div>
+                                <div class="col-12 col-lg-6 wow fadeInUp" data-wow-delay="100ms">
+                                    <label for="">Email</label>
+                                    <input type="email" name="email" class="form-control mb-30" value="<%- student.email %>" readonly>
+                                </div>
+                                <div class="col-12 col-lg-6 wow fadeInUp" data-wow-delay="100ms">
+                                    <label for="">Student ID</label>
+                                    <input type="number" name="studentID" class="form-control mb-30" value="<%- student.studentID %>" readonly>
+                                </div>
+                                <div class="col-12 col-lg-6 wow fadeInUp" data-wow-delay="100ms">
+                                    <label for="">D.O.B</label>
+                                    <input type="date" name="dob" class="form-control mb-30" placeholder="Date of Birth">
+                                </div>
+                                <div class="col-12 col-lg-6 wow fadeInUp" data-wow-delay="100ms">
+                                    <label for="">Address</label>
+                                    <input type="text" name="address" class="form-control mb-30" placeholder="Students Address">
+                                </div>
+                                <div class="col-12 col-lg-6 wow fadeInUp" data-wow-delay="100ms">
+                                    <label for="">Year</label>
+                                    <input type="text" name="current_year" class="form-control mb-30" value="<%- student.current_year %>" readonly>
+                                </div>
+                                <div class="col-12 col-lg-6 wow fadeInUp" data-wow-delay="100ms">
+                                    <label for="">Academic Year</label>
+                                    <input type="text" name="academicYear" class="form-control mb-30" placeholder="Academic Year (2020/2021)">
+                                </div>
+                            </div>
+
+                            <div class="section-heading text-center wow fadeInUp" data-wow-delay="100ms">
+                                <h6>Finance Information</h6>
+                                <!-- Student should attach a scanned copy of their receipt from the finance department -->
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-lg-6 wow fadeInUp" data-wow-delay="100ms">
+                                    <label for="">Fee Type</label>
+                                    <select name="feeType" id="feeType" class="form-control mb-30">
+                                        <option value="Select Fee Type..." disabled selected>Fee Type</option>
+                                        <option value="Tuition Waiver">Tuition Waiver</option>
+                                        <option value="Private">Private</option>
+                                        <option value="S.L.G">S.L.G</option>
+                                    </select>
+                                </div>
+
+                                <!-- <div class="form-group col-12 col-lg-6 wow fadeInUp">
+                                    <label for="">Fee Paid (Le)</label>
+                                    <div class="" data-wow-delay="100ms">
+                                        <input type="number" name="feePaid" class="form-control mb-30" placeholder="Fee Paid">
+                                    </div>    
+                                </div> -->
+
+                                <div class="form-group col-12 col-lg-6 wow fadeInUp">
+                                    <label for="">Fee Receipt</label>
+                                    <div class="" data-wow-delay="100ms">
+                                        <input type="file" name="feeReceipt" class="form-control mb-30" placeholder="Upload Fee Receipt">
+                                    </div>    
+                                </div>
+                            </div>
+
+                            <!-- <div class="section-heading text-center wow fadeInUp" data-wow-delay="100ms">
+                                <h6>Course Information</h6>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-lg-6 wow fadeInUp" data-wow-delay="100ms">
+                                    <select name="course" id="course" class="form-control mb-30">
+                                        <option value="Choose Course..." disabled selected>Choose Course</option>
+                                        <% //courses.forEach((course) => { %>
+                                            <option value="<%- //course.name %>"><%- //course.name %></option>
+                                        <% //}); %>
+                                    </select>
+                                </div>
+                            </div> -->
+                                <div class="col-12 text-center wow fadeInUp" data-wow-delay="100ms">
+                                    <button type="submit" class="btn roberto-btn mt-15">Register</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact Form Area End -->
+
+<%- include("partials/student_footer"); %>

@@ -1,0 +1,54 @@
+<%- include ('../partials/header') %>
+        <!-- Container Fluid-->
+        <div class="container-fluid" id="container-wrapper">
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Programs</h1>
+          </div>
+
+          <div class="row mb-3">
+            <!-- Programs -->
+            <div class="col-xl-12 col-lg-12 mb-4">
+              <div class="card">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Programs</h6>
+                  <a class="m-0 float-right btn btn-danger btn-sm" href="/admin/program/add">Add Program <i
+                      class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="table-responsive">
+                  <table class="table align-items-center table-flush">
+                    <thead class="thead-light">
+                      <tr>
+                        <th>No</th>
+                        <th>Program Type</th>
+                        <th>Program Name</th>
+                        <th>Duration</th>
+                        <th colspan="2" class="text-center">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% let count = 1; %>
+                      <% programs.forEach((program) => { %> 
+                          <tr>
+                            <td><%- count %></td>
+                            <td><%- program.type %></td>
+                            <td><%- program.name %></td>
+                            <td><%- program.duration %></td>
+                            <td class="text-center"><a href="/admin/program/<%- program._id %>/edit" class="btn btn-sm btn-primary">Edit</a></td>
+                            <td class="text-center">
+                              <form action="/admin/program/<%-program._id%>?_method=DELETE" method="POST">
+                                <button class="btn btn-sm btn-danger">Delete</button>
+                              </form>
+                            </td>
+                          </tr>
+                      <% }); %>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="card-footer"></div>
+              </div>
+            </div>
+            
+          </div>
+          <!--Row-->
+
+<%- include ('../partials/footer') %>

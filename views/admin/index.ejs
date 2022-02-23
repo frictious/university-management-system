@@ -1,0 +1,173 @@
+<%- include ('partials/header') %>
+        <!-- Container Fluid-->
+        <div class="container-fluid" id="container-wrapper">
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+          </div>
+
+          <div class="row mb-3">
+            <!-- School Card -->
+            <!-- <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Schools</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">25</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-calendar fa-2x text-primary"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+            <!-- Departments Card -->
+            <!-- <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Departments</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">65</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-shopping-cart fa-2x text-success"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+            <!-- Program Card -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Programs</div>
+                      <% let programCount = 0; %>
+                      <% programs.forEach((programs) => { %>
+                        <% programCount++; %>
+                      <% }); %>
+                      <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><%- programCount %></div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-users fa-2x text-info"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Courses Card -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Courses</div>
+                      <% let coursesCount = 0; %>
+                      <% courses.forEach((courses) => { %>
+                        <% coursesCount++; %>
+                      <% }); %>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><%- coursesCount %></div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-comments fa-2x text-warning"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Academic Year Card -->
+            <!-- <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Academic Year</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">25</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-calendar fa-2x text-primary"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+            <!-- Students Card -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Students</div>
+                      <% let studentsCount = 0; %>
+                      <% students.forEach((students) => { %>
+                        <% if(students.role === "Student") { %>
+                          <% studentsCount++; %>
+                        <% } %>
+                      <% }); %>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><%- studentsCount %></div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-shopping-cart fa-2x text-success"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Exam Officers Card -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Exam Officers</div>
+                      <% let examsCount = 0; %>
+                      <% admins.forEach((admins) => { %>
+                        <% if(admins.role === "Exam Officers"){ %>
+                          <% examsCount++; %>
+                        <% } %>
+                      <% }); %>
+                      <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><%- examsCount %></div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-users fa-2x text-info"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Admin Card -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Admins</div>
+                      <% let adminsCount = 0; %>
+                      <% admins.forEach((admins) => { %>
+                        <% if(admins.role === "Admin") { %>
+                          <% adminsCount++; %>
+                        <% } %>
+                      <% }); %>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><%- adminsCount %></div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-comments fa-2x text-warning"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Row-->
+
+<%- include ('partials/footer') %>

@@ -1,0 +1,48 @@
+<%- include('../partials/header') %>
+        <!-- Container Fluid-->
+        <div class="container-fluid" id="container-wrapper">
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Add Program</h1>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-12">
+              <!-- Add Program -->
+              <div class="card mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Add Program</h6>
+                </div>
+                <div class="card-body">
+                  <form action="/admin/program/add" method="POST">
+                    <label for="type">Program Type</label>
+                    <select class="form-control form-control-md  mb-3" name="type" id="type">
+                      <option disabled selected>Select Program Type</option>
+                      <option value="Certificate">Certificate</option>
+                      <option value="OD">OD</option>
+                      <option value="HND">HND</option>
+                      <option value="BSc.">BSc.</option>
+                      <option value="MSc.">MSc</option>
+                      <option value="PhD">PhD</option>
+                    </select>
+
+                    <div class="form-group">
+                      <label for="exampleInputName1">Program Name</label>
+                      <input type="text" class="form-control" id="exampleInputName1" aria-describedby="nameHelp" placeholder="Enter Program Name" name="name">
+                    </div>
+
+                    <label for="duration">Program Duration</label>
+                    <select class="form-control form-control-md  mb-3" name="duration" id="duration">
+                      <option disabled selected>Select Program Duration</option>
+                      <option value="1 Year">1 Year</option>
+                      <option value="2 Years">2 Years</option>
+                      <option value="3 Years">3 Years</option>
+                      <option value="4 Years">4 Years</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Row-->
+<%- include ('../partials/footer') %>

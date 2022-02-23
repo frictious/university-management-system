@@ -1,0 +1,173 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    background-color: rgb(216, 253, 241);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+div.form{
+    width: 30%;
+    margin: 0px auto;
+    padding: 10px;
+    border: 2px solid rgb(209, 206, 206);
+    border-radius: 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+div.login{
+    margin-top: 100px;
+}
+
+div.login form{
+    width: 100%;
+}
+
+div.login h2{
+    margin: 40px 0px;
+}
+
+div.login form input{
+    display: inline-block;
+    width: 100%;
+    font-size: 20px;
+    margin: 20px 0px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+div.login form button{
+    outline: none;
+    border: none;
+    background-color: rgb(209, 206, 206);
+    width: 200px;
+    padding: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+
+/* FOOTER */
+footer{
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    background-color: black;
+    color: white;
+    padding: 10px 0px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0%;
+}
+
+/* MAIN AREA */
+.container{
+    width: 90%;
+    margin: 20px auto;
+}
+
+main{
+    width: 100%;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+/* HEADING */
+main div.heading{
+    width: 100%;
+    min-height: 200px;
+    margin: 10px auto;
+    display: flex;
+    box-sizing: border-box;
+}
+
+main div.heading div.njala-info{
+    width: 70%;
+    height: 100%;
+    margin: 5px;
+    padding: 20px;
+    /* border: 1px solid black; */
+    box-sizing: border-box;
+    text-align: center;
+}
+
+main div.heading div.logo{
+    width: 15%;
+    height: 100%;
+    margin: 5px;
+    /* border: 1px solid brown; */
+    box-sizing: border-box;
+}
+
+main div.heading div.logo img{
+    width: 100%;
+    height: 100%;
+}
+/* END OF HEADING AREA */
+
+/* GRADES AREA */
+main div.grades{
+    width: 100%;
+    box-sizing: border-box;
+}
+
+main div.grades table{
+    width: 100%;
+}
+
+main div.grades table tr th{
+    text-align: left;
+}
+/* END OF GRADES AREA */
+
+/* PRINT BUTTON AREA */
+main div.print{
+    text-align: center;
+    margin: 5px 0px;
+}
+/* END OF PRINT BUTTON AREA */
+
+/* END OF MAIN AREA */
+
+/* SCREEN SIZES */
+@media (min-width: 0px) AND (max-width: 520px) {
+    div.form{
+        width: 80%;
+    }   
+}
+
+@media (min-width: 521px) AND (max-width: 760px) {
+    div.form{
+        width: 70%;
+    }   
+}
+
+/* PRINTING SIZE */
+@media print{
+    .container{
+        width: 100%;
+        margin: none;
+        box-sizing: border-box;
+    }
+
+    main{
+        border: none;
+    }
+
+    main div.print{
+        display: none;
+    }
+}

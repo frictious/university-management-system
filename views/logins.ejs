@@ -1,0 +1,18 @@
+<%- include('partials/header') %>
+    <div class="form login">
+        <h2>NJALA SRMS Login</h2>
+        <form action="/login" method="POST">
+            <label for="studentID">
+                <input type="text" name="studentID" id="studentID" placeholder="Student ID">
+            </label>
+
+            <label for="password">
+                <input type="password" name="password" id="password" placeholder="Password">
+            </label>
+
+            <button>Login</button>
+            <br>
+            <span>Forgot Password?... <a href="/forgotPassword">Click Here</a></span>
+        </form>
+    </div>
+<%- include('partials/footer') %>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Friction">
+  <link href="/images/njala_logo.png" rel="icon">
+  <title> <%- title %> </title>
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+  <link href="/css/ruang-admin.min.css" rel="stylesheet">
+</head>
+
+<body id="page-top">
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin">
+        <div class="sidebar-brand-icon">
+          <img src="/./images/njala_logo.png">
+        </div>
+        <div class="sidebar-brand-text mx-3">Njala UMS</div>
+      </a>
+      <hr class="sidebar-divider my-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="/admin">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span></a>
+      </li>
+      <hr class="sidebar-divider">
+      <!-- <div class="sidebar-heading">
+        Features
+      </div> -->
+      
+      <% if(user.role === "Admin") { %>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProgram" aria-expanded="true"
+            aria-controls="collapseProgram">
+            <i class="fab fa-fw fa-wpforms"></i>
+            <span>Program</span>
+          </a>
+          <div id="collapseProgram" class="collapse" aria-labelledby="headingProgram" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <!-- <h6 class="collapse-header">Forms</h6> -->
+              <a class="collapse-item" href="/admin/programs">Programs</a>
+              <a class="collapse-item" href="/admin/program/add">Add Program</a>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCourse" aria-expanded="true"
+            aria-controls="collapseCourse">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Course</span>
+          </a>
+          <div id="collapseCourse" class="collapse" aria-labelledby="headingCourse" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <!-- <h6 class="collapse-header">Tables</h6> -->
+              <a class="collapse-item" href="/admin/courses">Courses</a>
+              <a class="collapse-item" href="/admin/course/add">Add Course</a>
+            </div>
+          </div>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseStudents" aria-expanded="true"
+            aria-controls="collapseStudents">
+            <i class="fas fa-fw fa-columns"></i>
+            <span>Student</span>
+          </a>
+          <div id="collapseStudents" class="collapse" aria-labelledby="headingStudents" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <!-- <h6 class="collapse-header">Example Pages</h6> -->
+              <a class="collapse-item" href="/admin/students">Students</a>
+              <a class="collapse-item" href="/admin/student/add">Add Student</a>
+            </div>
+          </div>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGrade" aria-expanded="true"
+            aria-controls="collapseGrade">
+            <i class="fas fa-fw fa-columns"></i>
+            <span>Grade</span>
+          </a>
+          <div id="collapseGrade" class="collapse" aria-labelledby="headingGrade" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <a class="collapse-item" href="/admin/grades">Grades</a>
+              <a class="collapse-item" href="/admin/grade/search">Search</a>
+            </div>
+          </div>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsers" aria-expanded="true"
+            aria-controls="collapseUsers">
+            <i class="fas fa-fw fa-columns"></i>
+            <span>Users</span>
+          </a>
+          <div id="collapseUsers" class="collapse" aria-labelledby="headingUsers" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <!-- <h6 class="collapse-header">Example Pages</h6> -->
+              <a class="collapse-item" href="/admin/users">Users</a>
+              <a class="collapse-item" href="/admin/user/add">Add User</a>
+            </div>
+          </div>
+        </li>
+      <% } else if(user.role === "Finance Officer") { %> 
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseStudents" aria-expanded="true"
+            aria-controls="collapseStudents">
+            <i class="fas fa-fw fa-columns"></i>
+            <span>Student</span>
+          </a>
+          <div id="collapseStudents" class="collapse" aria-labelledby="headingStudents" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <!-- <h6 class="collapse-header">Example Pages</h6> -->
+              <a class="collapse-item" href="/admin/students">Students</a>
+              <a class="collapse-item" href="/admin/student/add">Add Student</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFees" aria-expanded="true"
+            aria-controls="collapseFees">
+            <i class="fas fa-fw fa-columns"></i>
+            <span>Fee</span>
+          </a>
+          <div id="collapseFees" class="collapse" aria-labelledby="headingFees" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <a class="collapse-item" href="/admin/registrations">Registrations</a>
+              <a class="collapse-item" href="/admin/fee/add">Add Fee</a>
+            </div>
+          </div>
+        </li>
+      <% } else if(user.role === "Admissions Officer") { %> 
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseStudents" aria-expanded="true"
+            aria-controls="collapseStudents">
+            <i class="fas fa-fw fa-columns"></i>
+            <span>Student</span>
+          </a>
+          <div id="collapseStudents" class="collapse" aria-labelledby="headingStudents" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <!-- <h6 class="collapse-header">Example Pages</h6> -->
+              <a class="collapse-item" href="/admin/students">Students</a>
+              <a class="collapse-item" href="/admin/student/add">Add Student</a>
+            </div>
+          </div>
+        </li>
+      <% } else if(user.role === "Exams Officer") { %>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCourse" aria-expanded="true"
+            aria-controls="collapseCourse">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Course</span>
+          </a>
+          <div id="collapseCourse" class="collapse" aria-labelledby="headingCourse" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <!-- <h6 class="collapse-header">Tables</h6> -->
+              <a class="collapse-item" href="/admin/courses">Courses</a>
+              <a class="collapse-item" href="/admin/course/add">Add Course</a>
+            </div>
+          </div>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGrade" aria-expanded="true"
+            aria-controls="collapseGrade">
+            <i class="fas fa-fw fa-columns"></i>
+            <span>Grade</span>
+          </a>
+          <div id="collapseGrade" class="collapse" aria-labelledby="headingGrade" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <a class="collapse-item" href="/admin/grades">Grades</a>
+              <a class="collapse-item" href="/admin/grade/search">Search</a>
+            </div>
+          </div>
+        </li>
+      <% } %>
+      
+    </ul>
+    <!-- Sidebar -->
+
+    <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+          <!-- TopBar -->
+          <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
+            <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
+              <i class="fa fa-bars"></i>
+            </button>
+            <ul class="navbar-nav ml-auto">
+              <div class="topbar-divider d-none d-sm-block"></div>
+              <li class="nav-item dropdown no-arrow">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  <img class="img-profile rounded-circle" src="/images/boy.png" style="max-width: 60px">
+                  <span class="ml-2 d-none d-lg-inline text-white small"><%- user.name %></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                  <a class="dropdown-item" href="/admin/user/<%- user._id %>/edit">
+                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Profile
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal">
+                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Logout
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </nav>
+          <!-- Topbar -->

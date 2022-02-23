@@ -1,0 +1,67 @@
+<%- include ('../partials/header') %>
+        <!-- Container Fluid-->
+        <div class="container-fluid" id="container-wrapper">
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Courses</h1>
+          </div>
+
+          <div class="row mb-3">
+            <!-- Courses -->
+            <div class="col-xl-12 col-lg-12 mb-4">
+              <div class="card">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Courses</h6>
+                  <a class="m-0 float-right btn btn-danger btn-sm" href="/admin/course/add">Add Course <i
+                      class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="table-responsive">
+                  <table class="table align-items-center table-flush table-hover" id="dataTableHover">
+                    <thead class="thead-light">
+                      <tr>
+                        <th>No</th>
+                        <th>Course Name</th>
+                        <th>Course Code</th>
+                        <th>Semester</th>
+                        <th>Lecturer</th>
+                        <th colspan="2" class="text-center">Action</th>
+                      </tr>
+                    </thead>
+                    <tfoot>
+                      <tr>
+                        <th>No</th>
+                        <th>Course Name</th>
+                        <th>Course Code</th>
+                        <th>Semester</th>
+                        <th>Lecturer</th>
+                        <th colspan="2" class="text-center">Action</th>
+                      </tr>
+                    </tfoot>
+                    <tbody>
+                      <% let count = 1 %>
+                      <% courses.forEach((course) => { %> 
+                        <tr>
+                          <td><%- count %></td>
+                          <td><%- course.name %></td>
+                          <td><%- course.abbr %> <%- course.courseCode %></td>
+                          <td><%- course.semester %></td>
+                          <td><%- course.lecturer %></td>
+                          <td class="text-center"><a href="/admin/course/<%-course._id%>/edit" class="btn btn-sm btn-primary">Edit</a></td>
+                          <td class="text-center">
+                            <form action="/admin/course/<%-course._id%>?_method=DELETE" method="POST">
+                              <button class="btn btn-sm btn-danger">Delete</button>
+                            </form>
+                          </td>
+                        </tr>
+                        <% count++; %>
+                      <% }); %>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="card-footer"></div>
+              </div>
+            </div>
+            
+          </div>
+          <!--Row-->
+
+<%- include ('../partials/footer') %>
